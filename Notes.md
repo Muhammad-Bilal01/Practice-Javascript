@@ -1,5 +1,45 @@
 # Learn Complete Javascript
 
+## Table of Contents
+
+[Learn Complete Javascript](#learn-complete-javascript)
+
+1.  [Basics](#basics)
+
+    1.1. [Chapter 1 - Alert](#chapter-1---alert)
+
+    1.2 [Chapter 2 - Variables for String](#chapter-2---variables-for-string)
+
+    1.3 [Chapter 3 - Variable for Numbers](#chapter-3---variable-for-numbers)
+
+    1.4 [Chapter 4 - Variable Names Legal and Illegal](#chapter-4---variable-names-legal-and-illegal)
+
+    1.5 [Chapter 5 & 6 - Math expressions: Familiar and Unfamiliar Operators](#chapter-5--6--math-expressions-familar-and-unfamilar-operators)
+
+    1.6 [PostFix And PreFix Operators](#postfix-and-prefix-operators)
+
+    1.7 [Chapter 7 - Math expressions: Eliminating ambiguity](#chapter-7---math-expressions-eliminating-ambiguity)
+
+    1.8 [Chapter 8 - Concatenating text String](#chapter-8---concatenating-text-string)
+
+    1.9 [Chapter 9 - Prompts](#chapter-9---prompts)
+
+    1.10 [Chapter 10 - If Statements](#chapter-10---if-statements)
+
+    1.11 [Chapter 11 - Comparision Operators](#chapter-11---comparision-operators)
+
+    1.12 [Chapter 12 - if...else and else if statements](#chapter-12---ifelse-and-else-if-statements)
+
+    1.13 [Chapter 13 - Testing set of Conditions](#chapter-13---testing-set-of-conditions)
+
+    1.14 [Chapter 14 - if statements nested](#chapter-14---if-statements-nested)
+
+    1.15 [Chapter 15 - Arrays](#chapter-14---Arrays)
+
+2.  [Intermediate](#intermediate)
+
+3.  [Advance](#advance)
+
 ## Basics
 
 ### Chapter 1 - Alert
@@ -438,6 +478,16 @@ if (food === "biryani") {
     alert("only take food");
   }
 }
+```
+
+### Chapter 15 - Arrays
+
+Now we learned how we can store single values in variable. but what if we want to store multiple values in the variable. Here the importance of arrays come.
+
+`array` is used to store similar data in the single values.
+
+```javascript
+var city = ["Karachi","Lahore","Queta","Islamabad"]`
 ```
 
 ## Intermidiate
