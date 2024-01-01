@@ -240,6 +240,36 @@ var full_name = first_name.concat(last_name);
 console.log(full_name);
 ```
 
+### Chapter 9 - Prompts
+
+`prompt()` is just like alert but the differnce is that `alert()` is used to show message and `prompt()` is used to ask question and gather information from the user.
+`prompt()` is also a window method in javascript and javascript keyword.
+prompt always a return a value in string enter by the user.
+
+```javascript
+var username = prompt("Enter Your Name");
+alert("Thanks " + username);
+```
+
+### Chapter 10 - If Statements
+
+`if statement` is used to maintain conditional logics in our programs. let us suppose we create a program for print the salary of the employee.
+
+- If the employee's salary is above 5000 add a bonus of 2000
+- If the employee's salary is above 10,000 add a bonus of 5000.
+- If the employee's salary is less than 5000 not need to add bonus.
+
+```javascript
+var salary = 5000;
+if (salary > 5000) {
+  salary = salary + 2000;
+}
+if (salary > 10000) {
+  salary = salary + 5000;
+}
+alert(salary);
+```
+
 ## Intermidiate
 
 ## Advance
