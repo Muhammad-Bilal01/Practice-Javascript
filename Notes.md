@@ -31,7 +31,7 @@ alert("Hello World from JS")
 
 **variable_name** this is refernce name to call the actual value and we used this to remember value.
 
-**=** this is called an assignment operator to store actual value in the container (memory).
+**`=`** this is called an assignment operator to store actual value in the container (memory).
 
 ```Javascript Code
 var myName = "Bilal";
