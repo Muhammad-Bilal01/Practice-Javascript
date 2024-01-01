@@ -29,3 +29,35 @@
 // console.log(result);
 // num2--; // num2 is now 4
 // console.log(result);
+
+// chapter 12
+// add plus operator before prompt method to convert string into Number
+// var percentage = +prompt("Enter Percentage");
+// if (percentage > 70) {
+//   alert("Congratulations");
+// }
+
+// if (percentage <= 70) {
+//   alert("need hard word");
+// }
+
+// var percentage = +prompt("Enter Percentage");
+// if (percentage > 70) {
+//   alert("Congratulations");
+// } else {
+//   alert("need hard word");
+// }
+
+// var percentage = +prompt("Enter Percentage");
+
+// if (percentage >= 80) {
+//   alert("A+");
+// } else if (percentage >= 70) {
+//   alert("A");
+// } else if (percentage >= 60) {
+//   alert("B");
+// } else if (percentage >= 50) {
+//   alert("C");
+// } else {
+//   alert("F");
+// }

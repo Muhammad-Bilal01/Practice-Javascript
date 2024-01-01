@@ -27,9 +27,9 @@ alert("Hello World from JS")
 
 **Define**
 
-**var** is also a keyword that define we need a container to store value.
+**`var`** is also a keyword that define we need a container to store value.
 
-**variable_name** this is refernce name to call the actual value and we used this to remember value.
+**`variable_name`** this is refernce name to call the actual value and we used this to remember value.
 
 **`=`** this is called an assignment operator to store actual value in the container (memory).
 
@@ -268,6 +268,176 @@ if (salary > 10000) {
   salary = salary + 5000;
 }
 alert(salary);
+```
+
+### Chapter 11 - Comparision Operators
+
+In JavaScript, comparison operators are used to compare values and return a Boolean result (either true or false). Here are the common comparison operators in JavaScript:
+
+| Operator | Description                     | Example   |
+| -------- | ------------------------------- | --------- |
+| `==`     | Equality (with type coercion)   | `a == b`  |
+| `!=`     | Inequality (with type coercion) | `a != b`  |
+| `===`    | Strict Equality (no coercion)   | `a === b` |
+| `!==`    | Strict Inequality (no coercion) | `a !== b` |
+| `>`      | Greater Than                    | `x > y`   |
+| `<`      | Less Than                       | `x < y`   |
+| `>=`     | Greater Than or Equal To        | `x >= y`  |
+| `<=`     | Less Than or Equal To           | `x <= y`  |
+
+**Explanation**:
+
+1. **Equality (`==`):** Checks if two values are equal (with type coercion).
+2. **Inequality (`!=`):** Checks if two values are not equal (with type coercion).
+3. **Strict Equality (`===`):** Checks if two values are equal without type coercion.
+4. **Strict Inequality (`!==`):** Checks if two values are not equal without type coercion.
+5. **Greater Than (`>`):** Checks if the value on the left is greater than the value on the right.
+6. **Less Than (`<`):** Checks if the value on the left is less than the value on the right.
+7. **Greater Than or Equal To (`>=`):** Checks if the value on the left is greater than or equal to the value on the right.
+8. **Less Than or Equal To (`<=`):** Checks if the value on the left is less than or equal to the value on the right.
+
+```javascript
+let a = 5;
+let b = "5";
+console.log(a == b); // Output: true (after type coercion)
+
+let a = 5;
+let b = "5";
+console.log(a != b); // Output: false (after type coercion)
+
+let a = 5;
+let b = "5";
+console.log(a === b); // Output: false (no type coercion)
+
+let a = 5;
+let b = "5";
+console.log(a !== b); // Output: true (no type coercion)
+
+let x = 10;
+let y = 5;
+console.log(x > y); // Output: true
+
+let x = 3;
+let y = 8;
+console.log(x < y); // Output: true
+
+let x = 5;
+let y = 5;
+console.log(x >= y); // Output: true
+
+let x = 3;
+let y = 3;
+console.log(x <= y); // Output: true
+```
+
+These operators are fundamental for making decisions and controlling the flow of a program based on the comparison of values.
+
+### Chapter 12 - if...else and else if statements
+
+In the previous chapter, we will learn `if statements` that any condition we used to create a new if statement.
+But the problem is that for any case where its true or false our programs execute this lines and that's make our program slow. so here is `if...else statements` comes. when we want to do something when the condition is true and also do something if the condition goes to false.
+
+let's take a scenerio:
+
+- if the percentage of the students is greater than 70, show an alert box to say congrats.
+- and if the percentage is is less than equal to 70, show the popup to say "Need work Hard!".
+
+by using only `if statements`
+
+```javascript code
+// add plus operator before prompt method to convert string into Number
+var percentage = +prompt("Enter Percentage");
+if (percentage > 70) {
+  alert("Congratulations");
+}
+
+if (percentage <= 70) {
+  alert("need hard word");
+}
+```
+
+we does not need to check the second condition if the first condtion is false.
+by using `if...else statements`
+
+```javascript
+var percentage = +prompt("Enter Percentage");
+if (percentage > 70) {
+  alert("Congratulations");
+} else {
+  alert("need hard word");
+}
+```
+
+but what if we have multiple condition like create a complete grading system.
+
+- percentage >= 80 => print A+
+- percentage >= 70 => print A
+- percentage >= 60 => print B
+- percentage >= 50 => print C
+- percentage >= 40 => print F
+
+here comes `if...else if...else statements`
+
+```javascript
+var percentage = +prompt("Enter Percentage");
+
+if (percentage >= 80) {
+  alert("A+");
+} else if (percentage >= 70) {
+  alert("A");
+} else if (percentage >= 60) {
+  alert("B");
+} else if (percentage >= 50) {
+  alert("C");
+} else {
+  alert("F");
+}
+```
+
+### chapter 13 - Testing set of Conditions
+
+Certainly! Here's a table summarizing the logical operators in JavaScript along with an example scenario:
+
+| Operator | Name        | Example    | Description                               |
+| -------- | ----------- | ---------- | ----------------------------------------- |
+| `&&`     | Logical AND | `a && b`   | return `true` if a and b both are true.   |
+| `\|\|`   | Logical OR  | `a \|\| b` | return `true` if any one of them are true |
+| `!`      | Logical NOT | `!a`       | reverse the condition                     |
+
+Now, let's create a scenario to understand these operators:
+
+**Scenario: Admission Eligibility**
+
+Imagine a school admission is open, the criteria of the admission is that if test score is greater than equal to 50 and last class score is greater than 60, then the admission is confirmed.
+
+```javascript
+var testScore = +prompt("Enter test score");
+var lastClass = +prompt("Enter last class score");
+
+// Logical AND: Both criteria must be met for admission
+if (testScore >= 50 && classScore > 60) {
+  alert("admission confirmed");
+} else {
+  alert("sorry");
+}
+```
+
+This scenario demonstrates how logical operators can be used to make decisions based on multiple conditions in a program.
+
+### Chapter 14 - if statements nested
+
+we can used if statement inside the if statements
+
+```javascript
+var food = "biryani";
+var expanse = 50;
+if (food === "biryani") {
+  if (expanse > 40) {
+    alert("take a bottle of pakola");
+  } else {
+    alert("only take food");
+  }
+}
 ```
 
 ## Intermidiate
