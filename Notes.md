@@ -1011,7 +1011,7 @@ var numberAsString = numberAsNumber.toString();
 
 ### Chapter 30 - Controlling the length of decimals
 
-`,toFixed()` is used to control the decimal places of the number.
+`.toFixed()` is used to control the decimal places of the number.
 
 ```javascript
 var number = 23.5665;
