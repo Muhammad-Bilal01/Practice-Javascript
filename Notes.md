@@ -50,6 +50,22 @@
 
     1.22 [Chapter 22 - Strings measuring length and Extracting parts](#chapter-22---strings-measuring-length-and-extracting-parts)
 
+    1.23 [Chapter 23 - Finding Segments](#chapter-23---finding-segments)
+
+    1.24 [Chapter 24 - Finding a Character at a Location](#chapter-24---strings-finding-a-character-at-a-location)
+
+    1.25 [Chapter 25 - String: Replacing Characters](#chapter-25---strings-replacing-characters)
+
+    1.26 [Chapter 26 - Rounding Numbers](#chapter-26---rounding-numbers)
+
+    1.27 [Chapter 27 - Generating Random Numbers](#chapter-27---generating-random-numbers)
+
+    1.28 [Chapter 28 - Convetring String to Integer and Decimals ](#chapter-28---converting-strings-to-integers-and-decimals)
+
+    1.29 [Chapter 29 - Converting String to Number and number to String](#chapter-29---converting-strings-to-numbers-numbers-to-strings)
+
+    1.30 [Chapter 30 - Controlling the length of Decimals](#chapter-30---controlling-the-length-of-decimals)
+
 2.  [Intermediate](#intermediate)
 
 3.  [Advance](#advance)
@@ -791,6 +807,216 @@ for (var i = 0; i < textLength; i++) {
 ```
 
 ### Chapter 23 - Finding Segments
+
+Replacing the String with new String.
+
+```javascript
+var text =
+  "It is startling to think that, even in the darkest depths of World War II, J. R. R. Tolkien was writing the trilogy, which contains, with the weird applicability available only to poetry and myth, the essential notion that the good gray wizard can understand the evil magi precisely because he is just enough like them to grasp their minds and motives in ways that they cannot grasp his.";
+
+console.log("Old text");
+
+console.log(text);
+
+// This is how we can replace the string with new string.
+for (var i = 0; i < text.length; i++) {
+  if (text.slice(i, i + 12) === "World War II") {
+    text = text.slice(0, i) + "the second world war" + text.slice(i + 12);
+  }
+}
+console.log("New Text");
+console.log(text);
+```
+
+`.indexOf()` return the index number of the given character.
+
+```javascript
+var dummyText = "Hello, This is Muhammad Bilal";
+var indexOfL = dummyText.indexOf("l"); // 2
+// always return the first match character index
+console.log(indexOfL);
+```
+
+`.lastIndexOf()` return the index number of the given character at the last.
+
+```javascript
+var dummyText = "Hello, This is Muhammad Bilal";
+var lastIndexOfL = dummyText.lastIndexOf("l"); // 2
+// always return the last match character index
+console.log(lastIndexOfL);
+```
+
+Replacing with the help of `indexOf()` method
+
+```javascript
+var text =
+  "It is startling to think that, even in the darkest depths of World War II, J. R. R. Tolkien was writing the trilogy, which contains, with the weird applicability available only to poetry and myth, the essential notion that the good gray wizard can understand the evil magi precisely because he is just enough like them to grasp their minds and motives in ways that they cannot grasp his.";
+
+console.log("Old text");
+
+console.log(text);
+
+// This is how we can replace the string with new string using indexOf method.
+
+var firstChar = text.indexOf("World War II"); // to find the index of first character 'W'
+
+if (firstChar !== -1) {
+  text =
+    text.slice(0, firstChar) +
+    "the second World War" +
+    text.slice(firstChar + 12);
+}
+
+console.log("New Text");
+console.log(text);
+```
+
+### Chapter 24 - Strings: Finding a character at a location
+
+`charAt()` method used to find a specific character by passing their index number.
+
+Example Code
+
+```javascript
+var firstName = prompt("Enter Name");
+var firstChar = firstName.charAt(0);
+
+console.log(firstChar);
+```
+
+to find specific character
+
+```javascript
+var text = "Hello ! This is Bilal";
+for (var i = 0; i < text.length; i++) {
+  if (text.charAt(i) === "!") {
+    alert("Exclamination Found! at indeex " + i);
+  }
+}
+```
+
+### Chapter 25 - Strings: Replacing characters
+
+In previous chapters you learned two different ways to replace "World War II" with "the
+Second World War" in a string. First, there was the loop-and-slice approach and improve by using indexOf method.
+
+But JavaScript provides a more straightforward way still, the `replace()` method.
+
+```javascript
+var text =
+  "It is startling to think that, even in the darkest depths of World War II, J. R. R. Tolkien was writing the trilogy, which contains, with the weird applicability available only to poetry and myth, the essential notion that the good gray wizard can understand the evil magi precisely because he is just enough like them to grasp their minds and motives in ways that they cannot grasp his. ";
+
+console.log("Old text");
+
+console.log(text);
+
+// This is how we can replace the string with new string using replace method.
+
+var newText = text.replace("World War II", "The Second World War");
+
+console.log("New Text");
+console.log(newText);
+```
+
+the above code is just remove the first occurence of "World War II". If we want to replace all we used loop
+
+```javascript
+var text =
+  "It is startling to think that, even in the darkest depths of World War II, J. R. R. Tolkien was writing the trilogy, which contains, World War II with the weird applicability available only to poetry and myth, the essential notion that the good gray wizard can understand the evil magi precisely because he is just enough like them to grasp their minds and motives in ways World War II that they cannot grasp his. World War II";
+
+for (var i = 0; i < text.length; i++) {
+  text = text.replace("World War II", "The Second World War");
+}
+console.log(text);
+```
+
+by using `replaceAll()` method:
+
+```javascript
+var text =
+  "It is startling to think that, even in the darkest depths of World War II, J. R. R. Tolkien was writing the trilogy, which contains, World War II with the weird applicability available only to poetry and myth, the essential notion that the good gray wizard can understand the evil magi precisely because he is just enough like them to grasp their minds and motives in ways World War II that they cannot grasp his. World War II";
+
+text = text.replaceAll("World War II", "The Second World War");
+console.log(text);
+```
+
+### Chapter 26 - Rounding numbers
+
+In Javascript, we have a built in library of Math Function which is provide important function to solve arithmetic operations.
+
+`Math.round()` to round the decimal value to the nearest value.
+
+`Math.ceil()`and `Math.floor()` do the same thing with minor differnt and it convert decimal value to the nearest integer.
+
+```javascript
+var roundVal = Math.round(2.45632);
+console.log(roundVal);
+
+var ceilVal = Math.ceil(0.90912);
+console.log(ceilVal);
+
+var floorVal = Math.floor(0.90912);
+console.log(floorVal);
+```
+
+### Chapter 27 - Generating random numbers
+
+Generating Random Number is an important technique to select something on the basis of computational.
+
+`Math.random()` method provide random number between 0 to 1;
+
+```javascript
+var random = Math.random();
+console.log(random);
+```
+
+to generate number between 1 to 5
+
+```javascript
+var random = Math.random();
+var range = Math.floor(random * 5) + 1; // generate Number between 1 to 5
+console.log(range);
+```
+
+### Chapter 28 - Converting strings to integers and decimals
+
+to convert string to Number .
+
+`parseInt()` to convert String into integer number
+`parseFloat()` to convert String into decimal number.
+
+```javascript
+var strToInt = parseInt("23"); // int 23
+var strToFloat = parseFloat("23.54"); // decimal 23.54
+
+console.log(typeof strToInt + " " + strToInt);
+console.log(typeof strToFloat + " " + strToFloat);
+```
+
+### Chapter 29 - Converting strings to numbers, numbers to strings
+
+`Number` convert any string to Number type
+`.toString()` convert any Number to String
+
+```javascript
+// String to Number
+var integerString = "24";
+var num = Number(integerString);
+
+// Number TO String
+
+var numberAsNumber = 1234;
+var numberAsString = numberAsNumber.toString();
+```
+
+### Chapter 30 - Controlling the length of decimals
+
+`,toFixed()` is used to control the decimal places of the number.
+
+```javascript
+var number = 23.5665;
+console.log(number.toFixed(2)); // convert to 2 decimal places
+```
 
 ## Intermidiate
 
