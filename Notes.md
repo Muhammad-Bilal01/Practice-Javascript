@@ -46,6 +46,10 @@
 
     1.20 [Chapter 20 - Nested Loops](#chapter-20---nested-loops)
 
+    1.21 [Chapter 21 - String: Changing Case](#chapter-21---string-changing-case)
+
+    1.22 [Chapter 22 - Strings measuring length and Extracting parts](#chapter-22---strings-measuring-length-and-extracting-parts)
+
 2.  [Intermediate](#intermediate)
 
 3.  [Advance](#advance)
@@ -718,6 +722,75 @@ for (var row = 1; row < 5; row++) {
   console.log("\n");
 }
 ```
+
+### Chapter 21 - String: Changing Case
+
+1. `toLowerCase()` to convert all the character of string in lower case.
+1. `toUpperCase()` to convert all the character of string in upper case.
+
+**Problem:** we have a list of city and user want to saerch their city in the list but he does not know which case to follow and he enter "Chennye" instead of "chenaye". Javascript does not match the string and return no match found.
+
+```javascript
+var cities = ["cheyenne", "santa fe", "tucson", "great falls", "honolulu"];
+
+var cityToCheck = prompt("Enter city");
+cityToCheck = cityToCheck.toLowerCase(); // convert user String in lower case
+
+for (var i = 0; i < cities.length; i++) {
+  if (cityToCheck === cities[i]) {
+    alert(cityToCheck + " is the cleanest City");
+  }
+}
+```
+
+### Chapter 22 - Strings: Measuring length and extracting parts
+
+`slice()` method is used to copy the scetion of the string.
+
+**Problem:** create a user string to title case {Boston, Karachi, Lahore}
+
+```javascript
+var userCity = prompt("Enter City");
+
+var firstChar = userCity.slice(0, 1);
+firstChar = firstChar.toUpperCase();
+
+var otherChar = userCity.slice(1);
+otherChar = otherChar.toLowerCase();
+
+var titleCase = firstChar + otherChar;
+
+alert("userCity " + userCity + " to " + titleCase);
+```
+
+`.lenght` is an attribute used to find the total characters in the string.
+
+```javascript
+// convert month to its abbrevation
+
+var month = prompt("Enter Month");
+var monthChar = month.length;
+if (monthChar > 3) {
+  month = month.slice(0, 3);
+}
+
+alert(month);
+```
+
+**Check Double Space in String**
+
+```javascript
+var text = prompt("Enter Some text");
+var textLength = text.length;
+
+for (var i = 0; i < textLength; i++) {
+  if (text.slice(i, i + 2) === "  ") {
+    alert("no double space allowed");
+  }
+}
+```
+
+### Chapter 23 - Finding Segments
 
 ## Intermidiate
 

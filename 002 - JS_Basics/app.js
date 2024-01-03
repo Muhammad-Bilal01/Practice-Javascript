@@ -61,3 +61,39 @@
 // } else {
 //   alert("F");
 // }
+
+// var cities = ["cheyenne", "santa fe", "tucson", "great falls", "honolulu"];
+
+// var cityToCheck = prompt("Enter city");
+// cityToCheck = cityToCheck.toLowerCase(); // convert user String in lower case
+
+// for (var i = 0; i < cities.length; i++) {
+//   if (cityToCheck === cities[i]) {
+//     alert(cityToCheck + " is the cleanest City");
+//   }
+// }
+
+// var userCity = prompt("Enter City");
+// var firstChar = userCity.slice(0, 1);
+// firstChar = firstChar.toUpperCase();
+// var otherChar = userCity.slice(1);
+// otherChar = otherChar.toLowerCase();
+// var titleCase = firstChar + otherChar;
+// alert("userCity " + userCity + " to " + titleCase);
+
+// var month = prompt("Enter Month");
+// var monthChar = month.length;
+// if (monthChar > 3) {
+//   month = month.slice(0, 3);
+// }
+
+// alert(month);
+
+// var text = prompt("Enter Some text");
+// var textLength = text.length;
+
+// for (var i = 0; i < textLength; i++) {
+//   if (text.slice(i, i + 2) === "  ") {
+//     alert("no double space allowed");
+//   }
+// }
