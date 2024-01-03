@@ -36,6 +36,16 @@
 
     1.15 [Chapter 15 - Arrays](#chapter-14---Arrays)
 
+    1.16 [Chapter 16 - Arrays: Adding and removing elements](#chapter-16---arrays-adding-and-removing-elements)
+
+    1.17 [Chapter 17 - Arrays: Removing, inserting, and extracting elements](#chapter-17---arrays-removing-inserting-and-extracting-elements)
+
+    1.18 [Chapter 18 - Loops](#chapter-18---for-loops)
+
+    1.19 [Chapter 19 - for loops: Flags, Booleans, array length, and loopus interruptus](#chapter-19---for-loops-flags-booleans-array-length-and-loopus-interruptus)
+
+    1.20 [Chapter 20 - Nested Loops](#chapter-20---nested-loops)
+
 2.  [Intermediate](#intermediate)
 
 3.  [Advance](#advance)
@@ -485,9 +495,228 @@ if (food === "biryani") {
 Now we learned how we can store single values in variable. but what if we want to store multiple values in the variable. Here the importance of arrays come.
 
 `array` is used to store similar data in the single values.
+we can get the value of array using its indexes and indexes start from 0.
 
 ```javascript
-var city = ["Karachi","Lahore","Queta","Islamabad"]`
+var city = ["Karachi", "Lahore", "Queta", "Islamabad"];
+console.log(city[0]); // Karachi
+console.log(city[1]); // Lahore
+console.log(city[2]); // Queta
+console.log(city[3]); // Islamabad
+```
+
+### Chapter 16 - Arrays: Adding and removing elements
+
+Adding or removing elements from an array is an essential task in Programing. when we have to declare an empty array and add or remove items from it.
+
+```javascript
+var pets = [];
+
+// assign value
+pets[0] = "cat";
+pets[1] = "dog";
+pets[2] = "chicken";
+
+// If we get the value of pet[4] its will return undefined, that means the value of pets[4] is not assign
+```
+
+If we get the value of `pet[4]` its will return undefined, that means the value of `pets[4]` is not assign
+
+**Remove elements at end of the array `pop()`**
+`pop()` method is used to remove elements from the end of the array.
+
+```javascript
+var pets = ["Dog", "Cat", "Birds", "Snake"];
+pets.pop(); // it will remove the snake from the pets array.
+```
+
+**\*Note** the value `pop()` method remove it will return the same elements.
+
+**Adding new value at end of array `push()`**
+
+```javascript
+var pets = ["Dog", "Cat", "Birds", "Snake"];
+pets.push("lizards"); // it will add the lizards from the pets array.
+```
+
+### Chapter 17 - Arrays: Removing, inserting, and extracting elements
+
+`shift()` method used to remove elements from the beginging of the array.
+
+`unshift()` method used to add elements from the begining of the array.
+
+```javascript
+var cities = ["Karachi", "Lahore", "Queta"];
+
+cities.unshift("Islamabad"); // add Islamabad to the beging of the array.
+
+console.log(cities); // ['Islamabad', 'Karachi', 'Lahore', 'Queta']
+
+cities.shift(); // remove the first element of the array.
+```
+
+**\*Note**
+
+1. `push()` and `unshift()` method return the length of the array.
+2. `pop()` and `shift()` method return the removing element of the array.
+
+`splice()` method is used to add or remove multiple value anywhere in an array.
+
+```javascript
+var cities = ["Lahore", "Karachi", "Islamabad"];
+
+// to add elements at index 1 without deleting any value
+cities.splice(0, 0, "Hyderabad", "Multan");
+// ['Hyderabad', 'Multan', 'Lahore', 'Karachi', 'Islamabad']
+
+// to remove Multan from it
+cities.splice(1, 1); // this will return the removing elements
+// ['Hyderabad', 'Lahore', 'Karachi', 'Islamabad']
+
+// to remove some value and add some values
+cities.splice(1, 2, "Peshawar", "Muree", "Sawat");
+// ['Hyderabad',"Peshawar","Muree","Sawat",'Islamabad']
+```
+
+`slice()` method to copy one or more consecutive elements in any position.
+
+### Chapter 18 - For loops
+
+`loops` is used to do something sequentially means you have to print count from 1 to 100
+what you do?
+
+you have to write `console.log(1)` 100 times.
+
+and the second thing is we run a loop to print count from 1 to 100
+
+```javascript
+for (var count = 1; count <= 100; count++) {
+  console.log(count);
+}
+```
+
+In Javascript, there are 3 things which are common in every loop.
+
+1. `initialization` which means what is the initial value.
+2. `condition` which means where to stop the loop.
+3. `increament` how to update the value.
+
+There are 3 types of loop in javascript:
+
+1. For loop.
+2. While Loop.
+3. Do while loop.
+
+**For Loop** is used where we know the range of the loop.
+also called range loop.
+
+```javascript
+for (var i = 0; i <= 100; i++) {
+  console.log(i);
+}
+```
+
+**While Loop** is used when we want to do something on the basis of user input.
+
+```javascript
+var count = 1; // initialization
+
+while (count <= 100) {
+  //condition
+  console.log(count);
+  count++; // updation
+}
+```
+
+**Do While Loop** is used when we want the loop is execute atleast one time, if the condition is wrong.
+
+```javascript
+var count = 10; // initialization
+do {
+  console.log(count);
+  count++; // updation
+} while (count < 10); // conditions
+```
+
+### Chapter 19 - for loops: Flags, Booleans, array length, and loopus interruptus
+
+`flag` is just a variable which is defined by developer used to indicate the status of the programs.
+lets take a example:
+
+```javascript
+var matchFound = "no"; // flags to indicate the status
+
+var cleanestCities = ["Karachi", "Lahore", "Islamabad", "Quetta"]; // List of cleanest city
+var userCity = prompt("Enter Your City: "); // usercity
+
+for (var i = 0; i < cleanestCities.length; i++) {
+  if (userCity === cleanestCitiess[i]) {
+    matchFound = "yes";
+  }
+}
+
+if (matchFound === "yes") {
+  alert(userCity + "is in the Cleanest City");
+} else {
+  alert(userCity + "is not in the Cleanest City");
+}
+```
+
+`break` is used to stop the loop and break the execution of the loop.
+`continue` is used to skip one execution of the program.
+
+```javascript
+// if we found a user city in the list of cleanest city, why we need to execute the complete loop.
+// here the usage of break comes out
+
+var matchFound = false; // flags to indicate the status
+
+var cleanestCities = ["Karachi", "Lahore", "Islamabad", "Quetta"]; // List of cleanest city
+var userCity = prompt("Enter Your City: "); // usercity
+
+for (var i = 0; i < cleanestCities.length; i++) {
+  if (userCity === cleanestCitiess[i]) {
+    matchFound = true;
+    break; // to stop the execution of the loop.
+  }
+}
+
+if (matchFound) {
+  alert(userCity + "is in the Cleanest City");
+} else {
+  alert(userCity + "is not in the Cleanest City");
+}
+
+// ----------------------------------
+
+// skip to print the multiple of 5 in the range of 1 to 100
+for (var i = 0; i <= 100; i++) {
+  if (i % 5 === 0) {
+    continue; // skip the loop
+  }
+  console.log(i);
+}
+```
+
+### Chapter 20 - Nested Loops
+
+Nested loop is used when we make a combination of something or print some patterns.
+nested loop means we used loops inside another loops.
+
+```javascript
+/*
+1 2 3 4
+1 2 3 4
+1 2 3 4
+1 2 3 4
+*/
+
+for (var row = 1; row < 5; row++) {
+  for (var col = 1; col < 5; col++) {
+    console.log(col);
+  }
+  console.log("\n");
+}
 ```
 
 ## Intermidiate
