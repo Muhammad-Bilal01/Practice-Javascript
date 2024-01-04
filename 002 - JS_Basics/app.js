@@ -112,3 +112,59 @@
 // }
 // console.log("New Text");
 // console.log(text);
+
+// var date = new Date();
+
+// var weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+// var months = [
+//   "Jan",
+//   "Feb",
+//   "Mar",
+//   "Apr",
+//   "May",
+//   "Jun",
+//   "Jul",
+//   "Aug",
+//   "Sept",
+//   "Oct",
+//   "Nov",
+//   "Dec",
+// ];
+
+// var day = date.getDay(); // index of the day
+// console.log(weekDays[day]);
+
+// var month = date.getMonth();
+// console.log(months[month]);
+
+// var now = date.getDate();
+// console.log(now);
+
+// var year = date.getFullYear();
+// console.log(year);
+
+// var hour = date.getHours();
+// console.log(hour);
+
+// var minute = date.getMinutes();
+// console.log(minute);
+
+// var seconds = date.getSeconds();
+// console.log(seconds);
+
+// var miliSeconds = date.getMilliseconds();
+// console.log(miliSeconds);
+
+// var time = date.getTime(); // getTime from 1 jan 1970 midnight
+// console.log(time);
+
+// var today = new Date();
+
+// var nextBirthday = new Date("January 5,2025");
+
+// var diff = nextBirthday.getTime() - today.getTime();
+
+// diff = Math.floor(diff / (1000 * 60 * 60 * 24)); // convert into day
+
+// console.log(diff + " days");

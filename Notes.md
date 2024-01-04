@@ -66,6 +66,16 @@
 
     1.30 [Chapter 30 - Controlling the length of Decimals](#chapter-30---controlling-the-length-of-decimals)
 
+    1.31 [Chapter 31 - Getting Current Date and Time.](#chapter-31---getting-current-date-and-time)
+
+    1.32 [Chapter 32 - Extracting Part of the Date and Time.](#chapter-32---extracting-part-of-the-date-and-time)
+
+    1.33 [Chapter 33 - Specifing a Date and Time.](#chapter-33---specifying-a-date-and-time)
+
+    1.34 [Chapter 34 - Changing Elements of a Date and Time.](#chapter-34---changing-elements-of-a-date-and-time)
+
+    1.35 [Chapter 35 - Functions](#chapter-35---function)
+
 2.  [Intermediate](#intermediate)
 
 3.  [Advance](#advance)
@@ -1016,6 +1026,151 @@ var numberAsString = numberAsNumber.toString();
 ```javascript
 var number = 23.5665;
 console.log(number.toFixed(2)); // convert to 2 decimal places
+```
+
+### Chapter 31 - Getting Current Date And Time.
+
+Your webpage includes a notice telling the user the current local date and time in his
+particular time zone. But what is the current date and time? Here's how JavaScript finds out.
+
+`var rightNow = new Date();`
+
+```javascript
+// Date is type of object
+
+// convert date object to string used .toString() method.
+
+// to get the day without converting it to the string.
+
+var rightNow = new Date();
+var theDay = rightNow.getDay(); // return the index of day array
+
+var weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+console.log(weekDays[theDay]);
+```
+
+### Chapter 32 - Extracting part of the date and Time.
+
+![Alt text](image.png)
+
+```javascript
+var date = new Date();
+
+var weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+var months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sept",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+var day = date.getDay(); // index of the day
+console.log(weekDays[day]);
+
+var month = date.getMonth();
+console.log(months[month]);
+
+var now = date.getDate();
+console.log(now);
+
+var year = date.getFullYear();
+console.log(year);
+
+var hour = date.getHours();
+console.log(hour);
+
+var minute = date.getMinutes();
+console.log(minute);
+
+var seconds = date.getSeconds();
+console.log(seconds);
+
+var miliSeconds = date.getMilliseconds();
+console.log(miliSeconds);
+
+var time = date.getTime(); // getTime from 1 jan 1970 midnight
+console.log(time);
+```
+
+### Chapter 33 - Specifying a date and time
+
+Specifying the date of future by using this date object.
+
+```javascript
+var today = new Date();
+
+var nextBirthday = new Date("January 5,2024");
+
+var diff = today.getTime() - nextBirthday.getTime();
+
+diff = Math.floor(diff / (1000 * 60 * 60 * 24)); // convert into day
+
+console.log(diff);
+```
+
+### Chapter 34 - Changing elements of a date and time
+
+now we have a setter method to set custom Date and Time.
+
+![Alt text](image-1.png)
+
+```javascript
+var date = new Date();
+
+var year = date.setFullYear("2025");
+var month = date.setMonth(2); // Feb
+var nextDate = date.setDate(21);
+var hour = date.setHours(2); //
+var minute = date.setMinutes(23);
+var seconds = date.setSeconds(45);
+var milli = date.setMilliseconds(230);
+
+console.log(year);
+console.log(month);
+console.log(nextDate);
+console.log(hour);
+console.log(minute);
+console.log(seconds);
+console.log(milli);
+
+console.log(date);
+```
+
+### Chapter 35 - Function
+
+`Function` is just like a robot, we have already set a rule or instruction to greet all the guest and make a cup of tea. but this is not do anything when we don't call to the robots.
+if we call the robot it will automatically do all the thing taht i pre-define by its system.
+
+`Function` is used to create a block of code and reues it again and again. like for loop we execute something sequentially but in function we reuse the code again and again like we define function to `greet` and do something and do greet after the execution.
+
+Syntax of Function
+
+- `function` keyword
+- `functionName()` function follow all the variable naming conventions.
+- `{}` block of code where we write our program to execute.
+- `functionName()` function call to execute or run the function.
+
+```Javascript
+
+// ask user to the name and say hello with the name.
+function sayHello(){
+  var username = prompt("Enter User name")
+  alert("Hello, "+username);
+}
+
+// it doesn't do anything until and unless we call the function to do something.
+
+sayHello(); // call the function
+
 ```
 
 ## Intermidiate
