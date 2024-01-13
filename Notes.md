@@ -8,7 +8,7 @@
 
     1.1. [Chapter 1 - Alert](#chapter-1---alert)
 
-    1.2 [Chapter 2 - Variables for String](#chapter-2---variables-for-string)
+    1. [Chapter 2 - Variables for String](#chapter-2---variables-for-string)
 
     1.3 [Chapter 3 - Variable for Numbers](#chapter-3---variable-for-numbers)
 
@@ -1171,6 +1171,159 @@ function sayHello(){
 
 sayHello(); // call the function
 
+```
+
+### Chapter 36 - Function: Passing Them Data [Parameters]
+
+There may be a case, where you want to do the same thing but the input by the user is different. That's why, we used parameterized Functions to call the same logic with different values.
+
+Example:
+Create a function to add two numbers, number is always given by the user.
+
+```javascript
+function sum(a, b) {
+  alert("the sum of two numbers is: ", a + b);
+} // this is do nothing whenever we call it.
+
+sum(4, 5); // 4 and 5 are the input value.
+```
+
+Example 2: You have to create where yo want to greet people by thier name.
+
+```Javascript
+function greetUser(name){
+  alert("Welcome to Our Restaurent "+ name );
+}
+
+greetUser("Bilal");
+```
+
+### Chapter 37 - Function : Passing data back from them
+
+As you learned in the last chapter, a function becomes more versatile when you pass data to it so it can deliver a custom job.
+
+But a function can do even more.
+
+**Scenerio:** Let's say you are running a super store, and you one of your employee to count the stock and tell me the what thing is out of stock. The Employee count the stock and `return` the list of products that stock are less than 10 items.
+
+`return` is a keyword in javascript used to give back something to do some extra working on the given output.
+
+**Example** We have to add two number by using functions and return it value.
+
+```javascript
+function addition(a, b) {
+  return a + b;
+}
+
+addition(4, 5); // it does not print anything.
+
+// so we can use it value.
+
+var sum = addition(5, 8);
+alert("the sum of two numbers is " + sum);
+```
+
+### Chapter 38 - Local vs Gloabal Variables
+
+Now we come to the subject of variable **scope**.
+![Alt text](image-2.png)
+
+In JavaScript, variables can be classified as either local or global based on their scope, which refers to the region of the code where the variable can be accessed. Here's a brief explanation of local and global variables with examples:
+
+1. **Global Variables:**
+
+   - Global variables are declared outside of any function or block of code, making them accessible throughout the entire script.
+   - They have a global scope, meaning they can be accessed from any part of the code.
+
+   ```javascript
+   // Global variable
+   var globalVar = "I am global";
+
+   function exampleFunction() {
+     // Accessing global variable inside a function
+     console.log(globalVar);
+   }
+
+   exampleFunction(); // Output: I am global
+   ```
+
+   In this example, `globalVar` is declared outside any function, making it a global variable. The function `exampleFunction` can access and print the value of `globalVar` because it has a global scope.
+
+2. **Local Variables:**
+
+   - Local variables are declared inside a function or a block of code, and they are only accessible within that specific function or block.
+   - They have a local scope, meaning they are confined to the context in which they are declared.
+
+   ```javascript
+   function exampleFunction() {
+     // Local variable
+     var localVar = "I am local";
+
+     // Accessing local variable inside the function
+     console.log(localVar);
+   }
+
+   exampleFunction(); // Output: I am local
+
+   // Trying to access local variable outside the function will result in an error
+   // console.log(localVar); // ReferenceError: localVar is not defined
+   ```
+
+   In this example, `localVar` is a local variable because it is declared inside the `exampleFunction`. Attempting to access `localVar` outside the function would result in a `ReferenceError` because it's not defined in the global scope.
+
+It's important to note that when a local variable has the same name as a global variable, the local variable takes precedence within its scope. This is known as variable shadowing.
+
+### Chapter 39 - switch statements: How to start them
+
+`switch` statement is just like an if Statements where we want to compare the equal operator, if true the do something and if not do alert message.
+
+**Example** lets we have to print "Whopee" if its sunday or saturday, else we have to print it's a "Working Day".
+
+```javascript
+if (dayOfWk === "Sat" || dayOfWk === "Sun") {
+  alert("Whoopee!");
+} else if (dayOfWk === "Fri") {
+  alert("TGIF!");
+} else {
+  alert("Shoot me now!");
+}
+```
+
+by using switch statements:
+
+```javascript
+switch (dayOfWk) {
+  case "Sat":
+    alert("Whoopee");
+    break;
+  case "Sun":
+    alert("Whoopee");
+    break;
+  case "Fri":
+    alert("TGIF!");
+    break;
+  default:
+    alert("Shoot me now!");
+}
+```
+
+### Chapter 40 - switch statements: How to complete them
+
+We can short the above code
+
+```javascript
+var dayOfWk = prompt("Enter week");
+switch (dayOfWk) {
+  case "Sat":
+  case "Sun":
+    alert("Whoopee"); // if both are print the same thing
+    break;
+  case "Fri":
+    alert("TGIF!");
+    break;
+  default:
+    alert("Shoot me now!");
+}
 ```
 
 ## Intermidiate
