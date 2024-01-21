@@ -1326,6 +1326,35 @@ switch (dayOfWk) {
 }
 ```
 
+### Chapter 41 - While loop
+
+While loop is just like for loop to print something with serailize.
+
+```javascript
+let i = 0;
+
+while (i <= 5) {
+  console.log(i);
+  i++;
+}
+```
+
+### Chapter 42 - Do-While loop
+
+do-while loop, we will discussed before that it is run one time if the loop is condition is even false.
+
+```javascript
+let i = 0;
+
+while {
+  console.log(i);
+  i++;
+}do(i>5); // false condition
+```
+
+**\*Note:**
+Skip Chapter 43 and 44, its nothing but commenting and placing Js with.Html
+
 ## Intermidiate
 
 ## Advance
